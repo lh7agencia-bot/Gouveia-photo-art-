@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-surface: #222222;
+  --color-brand-accent: #1D9BF0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #1A1A1A;
+    color: #F5F5F4;
+    font-family: var(--font-sans);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth accordion row expansion without layout thrashing */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}

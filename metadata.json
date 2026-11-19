@@ -1,0 +1,8 @@
+{
+  "name": "Gouveia Photo Art",
+  "description": "Momentos eternizados em arte. Estúdio de fotografia em Goiânia - GO especializado em casamentos, retratos e eventos corporativos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
